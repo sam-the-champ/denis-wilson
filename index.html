@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seven Words You Never Want to Hear</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --background-color: #ffffff;
+      --accent-color: #e0f0ff;
+      --deep-blue: #003366;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: #111;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .cta-text {
+      flex: 1;
+    }
+
+    .cta-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .cta-image img,
+    .deep-right img {
+      height: 50vh;
+      width: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 1rem auto;
+      loading: lazy;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .btn-primary:hover {
+      background-color: #003f8a;
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .deep-section {
+      background-color: var(--deep-blue);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .deep-content {
+      margin-bottom: 2rem;
+    }
+
+    .deep-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .deep-left {
+         flex: 1;
+      text-align: left;
+    }
+    .deep-left h2 {
+        margin-bottom: 10px;
+    }
+    .deep-right {
+      flex: 1;
+      text-align: center;
+    
+    }
+
+    .deep-left ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .deep-left ul li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .deep-left ul li::before {
+      content: "\1F4A1";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+    }
+
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .author-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .author-image {
+      flex: 1;
+    }
+
+    .author-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      loading: lazy;
+    }
+
+    .author-text {
+      flex: 2;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .modal-content h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .modal-content form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .modal-content input[type="text"],
+    .modal-content input[type="email"] {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .close-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .cta,
+      .deep-grid,
+      .author-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-text,
+      .cta-image,
+      .deep-left,
+      .deep-right,
+      .author-image,
+      .author-text {
+        flex: 1 1 100%;
+      }
+
+      .cta-image img,
+      .deep-right img {
+        height: auto;
+        max-width: 100%;
+      }
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Denise Wilson</h1>
+      <p>Will you be ready, or will you hear the seven words no one wants to hear?</p>
+    </header>
+
+    <section class="card cta">
+      <div class="cta-text">
+        <h2>Are You Truly Ready to Hear “Well Done”?</h2>
+        <p>Download the <strong>FREE guide</strong>: "Seven Words You Never Want To Hear" and take a deep, honest look at your spiritual journey.</p>
+        <p>This guide will help you understand Jesus’ warning in Matthew 7:23 and examine your heart with Biblical clarity.</p>
+        <p><strong>Don’t leave your eternal destiny to chance.</strong></p>
+      </div>
+      <div class="cta-image">
+        <img src="as.jpg" alt="Book Cover">
+        <button class="btn-primary" onclick="trackClick('btn1')">Get The Guide Now</button>
+      </div>
+    </section>
+
+    <section class="deep-section">
+      <div class="deep-content">
+        <h2>Will You Hear “Well Done”… or “I Never Knew You”?</h2>
+        <p>You go to church. You try to live right. You believe in God. But deep down, you still wonder…</p>
+        <p><em>“Am I really saved?”</em></p>
+        <p>Jesus warned that many will say “Lord, Lord” and still be cast away (Matthew 7:23). Don’t wait until eternity to find out if you got it wrong.</p>
+        <p>This guide will help you pause, reflect, and face the most important question of your life—with Scripture as your mirror.</p>
+      </div>
+      <div class="deep-grid">
+        <div class="deep-left">
+          <h2>What You’ll Discover Inside</h2>
+          <ul>
+            <li>Biblical insight into Jesus’ warning in Matthew 7:23</li>
+            <li>5 signs your faith might not be real</li>
+            <li>A salvation checklist to examine your heart</li>
+            <li>Encouragement to pursue a faith that truly transforms</li>
+          </ul>
+        </div>
+        <div class="deep-right">
+          <img src="save-removebg-preview.png" alt="Book Image">
+          <button class="btn-primary" onclick="trackClick('btn2')">Get The Guide Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card form-section">
+      <h2>Let's Stay Connected</h2>
+      <p>Get biblical encouragement, updates on new books and blog posts, and helpful resources from Denise Wilson straight to your inbox.</p>
+      <form id="subscribe-form">
+        <input type="email" placeholder="Email" name="email" required>
+        <input type="text" placeholder="First Name" name="firstName" required>
+        <input type="text" placeholder="Last Name" name="lastName" required>
+        <button class="btn-primary" type="submit">Subscribe Now</button>
+      </form>
+    </section>
+
+    <section class="card author-section">
+      <div class="author-image">
+        <img src="author.jpg" alt="Denise Wilson">
+      </div>
+      <div class="author-text">
+        <h2>About The Author</h2>
+        <p>Denise Wilson is a multi-award-winning author, former missionary, and passionate Bible teacher. For over 30 years, she has helped others understand what it truly means to follow Jesus. Through writing, speaking, and mentoring, she continues to challenge Christians to examine their faith and pursue authentic salvation.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Denise Wilson Ministries. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Subscription Modal -->
+  <div class="modal" id="subscriptionModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="toggleModal()">X</button>
+      <h3>Subscribe to Our Mailing List</h3>
+      <form id="popup-subscribe-form">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <button class="btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let clickCounts = { btn1: 0, btn2: 0 };
+
+    function trackClick(buttonId) {
+      clickCounts[buttonId]++;
+      console.log(`Button ${buttonId} clicked ${clickCounts[buttonId]} times`);
+      toggleModal();
+    }
+
+    function toggleModal() {
+      const modal = document.getElementById('subscriptionModal');
+      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      console.log('Form Submission:', Object.fromEntries(formData.entries()));
+      alert('Thank you for subscribing!');
+    });
+
+    document.getElementById('popup-subscribe-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      console.log('Popup Form Submission:', Object.fromEntries(formData.entries()));
+      alert('Thank you for subscribing!');
+      toggleModal();
+    });
+
+    // Show popup after 4 seconds of scroll
+    let popupShown = false;
+    window.addEventListener('scroll', function() {
+      if (!popupShown && window.scrollY > 100) {
+        popupShown = true;
+        setTimeout(() => toggleModal(), 4000);
+      }
+    });
+  </script>
+</body>
+</html>

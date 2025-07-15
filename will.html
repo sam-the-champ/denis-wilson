@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seven Words You Never Want to Hear</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --background-color: #ffffff;
+      --accent-color: #e0f0ff;
+      --deep-blue: #003366;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: #111;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .cta-text {
+      flex: 1;
+    }
+
+    .cta-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .cta-image img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #003f8a;
+    }
+
+    .deep-section {
+      background-color: var(--deep-blue);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .deep-content {
+      margin-bottom: 2rem;
+    }
+
+    .deep-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .deep-left,
+    .deep-right {
+      flex: 1;
+    }
+
+    .deep-right img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .author-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .author-image {
+      flex: 1;
+    }
+
+    .author-image img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .author-text {
+      flex: 2;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Denise Wilson</h1>
+      <p>Will you be ready, or will you hear the seven words no one wants to hear?</p>
+    </header>
+
+    <section class="card cta">
+      <div class="cta-text">
+        <h2>Are You Truly Ready to Hear “Well Done”?</h2>
+        <p>Download the <strong>FREE guide</strong>: "Seven Words You Never Want To Hear" and take a deep, honest look at your spiritual journey.</p>
+        <p>This guide will help you understand Jesus’ warning in Matthew 7:23 and examine your heart with Biblical clarity.</p>
+        <p><strong>Don’t leave your eternal destiny to chance.</strong></p>
+      </div>
+      <div class="cta-image">
+        <img src="as.jpg" alt="Book Cover">
+        <button class="btn-primary">Get The Guide Now</button>
+      </div>
+    </section>
+
+    <section class="deep-section">
+      <div class="deep-content">
+        <h2>Will You Hear “Well Done”… or “I Never Knew You”?</h2>
+        <p>You go to church. You try to live right. You believe in God. But deep down, you still wonder…</p>
+        <p><em>“Am I really saved?”</em></p>
+        <p>Jesus warned that many will say “Lord, Lord” and still be cast away (Matthew 7:23). Don’t wait until eternity to find out if you got it wrong.</p>
+        <p>This guide will help you pause, reflect, and face the most important question of your life—with Scripture as your mirror.</p>
+      </div>
+      <div class="deep-grid">
+        <div class="deep-left">
+          <h2>What You’ll Discover Inside</h2>
+          <ul>
+            <li>Biblical insight into Jesus’ warning in Matthew 7:23</li>
+            <li>5 signs your faith might not be real</li>
+            <li>A salvation checklist to examine your heart</li>
+            <li>Encouragement to pursue a faith that truly transforms</li>
+          </ul>
+        </div>
+        <div class="deep-right">
+          <img src="save-removebg-preview.png" alt="Book Image">
+          <button class="btn-primary">Get The Book Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card form-section">
+      <h2>Let's Stay Connected</h2>
+      <p>Get biblical encouragement, updates on new books and blog posts, and helpful resources from Denise Wilson straight to your inbox.</p>
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <button class="btn-primary" type="submit">Subscribe Now</button>
+      </form>
+    </section>
+
+    <section class="card author-section">
+      <div class="author-image">
+        <img src="author.jpg" alt="Denise Wilson">
+      </div>
+      <div class="author-text">
+        <h2>About The Author</h2>
+        <p>Denise Wilson is a multi-award-winning author, former missionary, and passionate Bible teacher. For over 30 years, she has helped others understand what it truly means to follow Jesus. Through writing, speaking, and mentoring, she continues to challenge Christians to examine their faith and pursue authentic salvation.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Denise Wilson Ministries. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
