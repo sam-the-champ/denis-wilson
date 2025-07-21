@@ -43,38 +43,35 @@
       margin-bottom: 1rem;
     }
 
-    .card {
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
+      .guide-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+       gap: 2rem;
+      margin-top: 2rem;
+  align-items: start;
+}
 
-    .cta {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
+.guide-item {
+  text-align: center;
+}
 
-    .cta-text {
-      flex: 1;
-    }
+.guide-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem;
+}
 
-    .cta-image {
-      flex: 1;
-      text-align: center;
-    }
+.guide-item p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
-    .cta-image img,
-    .deep-right img {
-      height: 50vh;
-      width: auto;
-      border-radius: 8px;
-      display: block;
-      margin: 0 auto 1rem auto;
-      loading: lazy;
-    }
+
+
 
     .btn-primary {
       background-color: var(--primary-color);
@@ -311,7 +308,7 @@
 <body>
  <div class="container">
   <header>
-    <h1>Are You Truly Ready?</h1>
+    <h1>Seven Words You Never Want to Hear</h1>
     <p>Will you be ready, or will you hear the seven words no one wants to hear?</p>
   </header>
 
@@ -319,15 +316,17 @@
   <section class="card featured-guides">
     <h2>Discover the Truth — Before It's Too Late</h2>
     <p>Two powerful resources — a GUIDE and a life-changing BOOK — to help you reflect on your faith with Biblical clarity.</p>
+    <p></p>
     <div class="guide-grid">
       <div class="guide-item">
-        <img src="as.jpg" alt="Seven Words You Never Want To Hear">
-        <a href="https://a.co/d/6NDStRp" target="_blank"><button class="btn-primary" onclick="trackClick('btn1')">Get The Guide</button></a>
+        <img src="original img.jpg" alt="Seven Words You Never Want To Hear">
+        <p>Discounted now on Amazon  grab your copy!</p>
+        <a href="https://a.co/d/6NDStRp" target="_blank"><button class="btn-primary" onclick="trackClick('btn1')">Get The BOOK Now</button></a>
       </div>
       <div class="guide-item">  <p class="guide-message"><strong>Stop and reflect:</strong> If Jesus returned today, would He say, “Well done” or “I never knew you”? These guides are your opportunity to examine your heart and align your faith with the truth of God’s Word.</p></div>
       <div class="guide-item">
-        <img src="save-removebg-preview.png" alt="Salvation Guide">
-        <a href="https://a.co/d/bVpGVuq" target="_blank"><button class="btn-primary" onclick="trackClick('btn2')">Get the Boook Now</button></a>
+        <img src="as.jpg" alt="Salvation Guide">
+        <a href="https://a.co/d/bVpGVuq" target="_blank"><button class="btn-primary" onclick="trackClick('btn2')">Get the GUIDE Now</button></a>
       </div>
     </div>
   </section>
