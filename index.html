@@ -90,7 +90,7 @@
       background-color: #613932;
       transform: scale(1.05);
     }
-    .btn-secondary{
+    .btn{
         background-color: var(--primary-color);
             color: white;
       padding: 0.75rem 1.5rem;
@@ -102,7 +102,7 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
       animation: pulse 2s infinite;
     }
-    .btn-secondary:hover{
+    .btn:hover{
        background-color: #1791c7;
       transform: scale(1.05);
     }
@@ -213,60 +213,68 @@
       font-size: 0.9rem;
     }
 
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+   .overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
 
-    .modal-content {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      position: relative;
-    }
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 1000;
+  width: 90%;
+  max-width: 480px;
+}
 
-    .modal-content h3 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
+.popup input[type=text],
+.popup input[type=email] {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0 18px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
 
-    .modal-content form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+.popup input[type=text]:focus,
+.popup input[type=email]:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
 
-    .modal-content input[type="text"],
-    .modal-content input[type="email"] {
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      width: 100%;
-    }
+.popup h2 {
+  color: #4a90e2;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
 
-    .close-btn {
-      background: transparent;
-      border: none;
-      font-size: 1.2rem;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      cursor: pointer;
-      color: #666;
-    }
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #4a90e2;
+}
     .featured-guides {
   text-align: center;
   padding: 2rem 1rem;
@@ -302,7 +310,9 @@
 .dangling{
   text-align: center;
 }
-
+.reflect{
+  display: none;
+}
 
 
     @media (max-width: 768px) {
@@ -333,6 +343,15 @@
         font-weight: bold;
        
       }
+      .deep-section .he2{
+        margin-left: 0px;
+      }
+      .reflect{
+        display: block;
+      }
+      .reflect2{
+        display: none;
+      }
     }
     
 
@@ -351,13 +370,13 @@
     <p class="dangling">Two powerful resources — a GUIDE and a life-changing BOOK</p>
     <p>to help you reflect on your faith with Biblical clarity.</p>
 
-    <h3 style="margin-top: 5px; margin-bottom: -23px;"><strong>Stop and reflect:</strong></h3>
+    <h3 style="margin-top: 5px; margin-bottom: -23px;" class="reflect2"><strong>Stop and reflect:</strong></h3>
     <div class="guide-grid">
       <div class="guide-item">
         <img src="original img.jpg" alt="Seven Words You Never Want To Hear">
         <a href="https://a.co/d/6NDStRp" target="_blank"><button class="btn-primary" onclick="trackClick('btn1')">Get The BOOK Now</button></a>
       </div>
-      <div class="guide-item">  <p class="guide-message"> If Jesus returned today, would He say, “Well done, good and faithful servant” — or “I never knew you; depart from me”?</p>
+      <div class="guide-item">  <p class="guide-message"><p class="reflect"><strong>Stop and reflect:</strong></p> If Jesus returned today, would He say, “Well done, good and faithful servant” — or “I never knew you; depart from me”?</p>
       <p class="guide-message">Now is the time to examine your heart, and align your faith with the truth of God's Word</p>
       <p style="margin-top: 50px;">Now on sale at a discounted price on Amazon. Don’t miss it!</p>
     </div>
@@ -389,16 +408,15 @@
   </section>
 
   <!-- Stay Connected Form -->
-  <section class="card form-section">
-    <h3>Let's Stay Connected</h3>
-    <p>Get biblical encouragement, updates on new books and blog posts, and helpful resources from Denise Wilson straight to your inbox.</p>
-    <form id="subscribe-form">
-      <input type="email" placeholder="Email" name="email" required>
-      <input type="text" placeholder="First Name" name="firstName" required>
-      <input type="text" placeholder="Last Name" name="lastName" required>
-      <button class="btn-secondary" type="submit">Subscribe Now</button>
-    </form>
-  </section>
+    <section id="newsletter" style="max-width: 900px; margin: 40px auto; padding: 30px 20px; background: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(74, 144, 226, 0.2); text-align: center;">
+  <h3 style="color: #4a90e2; margin-bottom: 24px; font-weight: 700; font-size: 1.8rem;">Let's stay Connected</h2>
+  <form id="newsletter-form-bottom" onsubmit="submitForm(event)" style="display: flex; flex-direction: column; gap: 15px;">
+    <input type="text" name="name" placeholder="Your Name" required
+      style="padding: 14px; border: 1.5px solid #ccc; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s ease;"/>
+    <input type="email" name="email" placeholder="Your Email" required
+      style="padding: 14px; border: 1.5px solid #ccc; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s ease;"/>
+    <button  type="submit" class="btn" style="padding: 14px 32px; font-weight: 700; border-radius: 10px; cursor: pointer;">Subscribe now</button>
+  </form>
 
   <!-- Author Section -->
   <!-- <section class="card author-section">
@@ -415,56 +433,80 @@
 </div>
 
 <!-- Modal remains unchanged -->
-<div class="modal" id="subscriptionModal">
-  <div class="modal-content">
-    <button class="close-btn" onclick="toggleModal()">X</button>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <button class="close-btn" onclick="closePopup()">×</button>
     <h3>Subscribe to Our Mailing List</h3>
-    <form id="popup-subscribe-form">
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="firstName" placeholder="First Name" required>
-      <input type="text" name="lastName" placeholder="Last Name" required>
-      <button class="btn-secondary" type="submit">Submit</button>
+    <form id="newsletter-form" onsubmit="submitForm(event)">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <button class="btn" type="submit">Subscribe now</button>
     </form>
   </div>
-</div>
 
   <script>
-    let clickCounts = { btn1: 0, btn2: 0 };
+   let hasShownPopup = false;
 
-    function trackClick(buttonId) {
-      clickCounts[buttonId]++;
-      console.log(`Button ${buttonId} clicked ${clickCounts[buttonId]} times`);
-      toggleModal();
+function sendToGoogleForm(data) {
+  const formData = new FormData();
+  formData.append('entry.1536088848', data.name);   // Name field
+  formData.append('entry.1876690652', data.email); // Email field
+
+  fetch('', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  })
+  .then(() => {
+    console.log('Form submitted');
+    alert("Thanks for subscribing!");
+  })
+  .catch((error) => {
+    console.error('Form submit error:', error);
+    alert("Something went wrong.");
+  });
+}
+
+
+function submitForm(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const name = form.querySelector('input[name="name"]').value;
+  const email = form.querySelector('input[name="email"]').value;
+
+  sendToGoogleForm({ name, email });
+  form.reset();
+}
+
+
+
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
     }
 
-    function toggleModal() {
-      const modal = document.getElementById('subscriptionModal');
-      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
     }
 
-    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      console.log('Form Submission:', Object.fromEntries(formData.entries()));
-      alert('Thank you for subscribing!');
-    });
-
-    document.getElementById('popup-subscribe-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      console.log('Popup Form Submission:', Object.fromEntries(formData.entries()));
-      alert('Thank you for subscribing!');
-      toggleModal();
-    });
-
-    // Show popup after 4 seconds of scroll
-    let popupShown = false;
-    window.addEventListener('scroll', function() {
-      if (!popupShown && window.scrollY > 100) {
-        popupShown = true;
-        setTimeout(() => toggleModal(), 4000);
+    window.addEventListener('scroll', () => {
+      if (!hasShownPopup && window.scrollY > document.body.scrollHeight * 0.6) {
+        showPopup();
+        hasShownPopup = true;
       }
     });
+
+    setTimeout(() => {
+      if (!hasShownPopup) {
+        showPopup();
+        hasShownPopup = true;
+      }
+    }, 15000);
+
+    document.getElementById('overlay').addEventListener('click', closePopup);
   </script>
 </body>
 </html>
