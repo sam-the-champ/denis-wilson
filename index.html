@@ -450,10 +450,10 @@
 
 function sendToGoogleForm(data) {
   const formData = new FormData();
-  formData.append('entry.1536088848', data.name);   // Name field
-  formData.append('entry.1876690652', data.email); // Email field
+  formData.append('entry.1825824654', data.name);   // Name field
+  formData.append('entry.380176177', data.email); // Email field
 
-  fetch('', {
+  fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSeHkRUBYx1ThcaeHUsAwoPXrA40COaBcgmlnLdgDeSX9RyPxg/formResponse', {
     method: 'POST',
     mode: 'no-cors',
     body: formData
