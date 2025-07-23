@@ -74,7 +74,7 @@
 
 
     .btn-primary {
-      background-color: var(--primary-color);
+      background-color: #d63D22;
       color: white;
       padding: 0.75rem 1.5rem;
       border: none;
@@ -87,9 +87,26 @@
     }
 
     .btn-primary:hover {
-      background-color: #003f8a;
+      background-color: #613932;
       transform: scale(1.05);
     }
+    .btn-secondary{
+        background-color: var(--primary-color);
+            color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    .btn-secondary:hover{
+       background-color: #1791c7;
+      transform: scale(1.05);
+    }
+
 
     @keyframes pulse {
       0% { transform: scale(1); }
@@ -98,11 +115,18 @@
     }
 
     .deep-section {
-      background-color: var(--deep-blue);
+      background-color: #1791c7;
       color: white;
       padding: 3rem 2rem;
       border-radius: 12px;
       margin-bottom: 2rem;
+    }
+    .deep-section .h2{
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .deep-section .he2{
+      margin-left: 150px;
     }
 
     .deep-content {
@@ -275,6 +299,9 @@
   color: #333;
   text-align: center;
 }
+.dangling{
+  text-align: center;
+}
 
 
 
@@ -315,21 +342,25 @@
  <div class="container">
   <header>
     <h1>Seven Words You Never Want to Hear</h1>
-    <p>Will you be ready, or will you hear the seven words no one wants to hear?</p>
+    <h3>How to be sure you won't</h3>
   </header>
 
   <!-- NEW Combined Image & Button Section -->
   <section class="card featured-guides">
     <h2>Discover the Truth — Before It's Too Late</h2>
-    <p>Two powerful resources — a GUIDE and a life-changing BOOK — to help you reflect on your faith with Biblical clarity.</p>
-    <p></p>
+    <p class="dangling">Two powerful resources — a GUIDE and a life-changing BOOK</p>
+    <p>to help you reflect on your faith with Biblical clarity.</p>
+
+    <h3 style="margin-top: 5px; margin-bottom: -23px;"><strong>Stop and reflect:</strong></h3>
     <div class="guide-grid">
       <div class="guide-item">
         <img src="original img.jpg" alt="Seven Words You Never Want To Hear">
-        <p>Now on sale at a discounted price on Amazon. Don’t miss it!</p>
         <a href="https://a.co/d/6NDStRp" target="_blank"><button class="btn-primary" onclick="trackClick('btn1')">Get The BOOK Now</button></a>
       </div>
-      <div class="guide-item">  <p class="guide-message"><strong>Stop and reflect:</strong> If Jesus returned today, would He say, “Well done” or “I never knew you”? These guides are your opportunity to examine your heart and align your faith with the truth of God’s Word.</p></div>
+      <div class="guide-item">  <p class="guide-message"> If Jesus returned today, would He say, “Well done, good and faithful servant” — or “I never knew you; depart from me”?</p>
+      <p class="guide-message">Now is the time to examine your heart, and align your faith with the truth of God's Word</p>
+      <p style="margin-top: 50px;">Now on sale at a discounted price on Amazon. Don’t miss it!</p>
+    </div>
       <div class="guide-item">
         <img src="as.jpg" alt="Salvation Guide">
         <a href="https://a.co/d/bVpGVuq" target="_blank"><button class="btn-primary" onclick="trackClick('btn2')">Get the GUIDE Now</button></a>
@@ -340,13 +371,14 @@
   <!-- Deep Scriptural Reflection Section -->
   <section class="deep-section">
     <div class="deep-content">
-      <h2>Will You Hear “Well Done”… or “I Never Knew You”?</h2>
+      <h2 class="h2">Will You Hear “Well Done”… or “I Never Knew You”?</h2>
       <p>You go to church. You try to live right. You believe in God. But deep down, you still wonder…</p>
+      <p style="padding: 1rem;"></p>
       <p><em>“Am I really saved?”</em></p>
       <p>This guide will help you pause, reflect, and face the most important question of your life—with Scripture as your mirror.</p>
     </div>
     <div class="deep-left">
-      <h2>What You’ll Discover Inside</h2>
+      <h2 class="he2">What You’ll Discover Inside</h2>
       <ul>
         <li>Biblical insight into Jesus’ warning in Matthew 7:23</li>
         <li>5 signs your faith might not be real</li>
@@ -358,13 +390,13 @@
 
   <!-- Stay Connected Form -->
   <section class="card form-section">
-    <h2>Let's Stay Connected</h2>
+    <h3>Let's Stay Connected</h3>
     <p>Get biblical encouragement, updates on new books and blog posts, and helpful resources from Denise Wilson straight to your inbox.</p>
     <form id="subscribe-form">
       <input type="email" placeholder="Email" name="email" required>
       <input type="text" placeholder="First Name" name="firstName" required>
       <input type="text" placeholder="Last Name" name="lastName" required>
-      <button class="btn-primary" type="submit">Subscribe Now</button>
+      <button class="btn-secondary" type="submit">Subscribe Now</button>
     </form>
   </section>
 
@@ -378,7 +410,7 @@
   </section> -->
 
   <footer>
-    <p>&copy; 2025 Denise Wilson Ministries. All rights reserved.</p>
+    <p>&copy; 2025 Denise Wilson. All rights reserved.</p>
   </footer>
 </div>
 
@@ -391,7 +423,7 @@
       <input type="email" name="email" placeholder="Email" required>
       <input type="text" name="firstName" placeholder="First Name" required>
       <input type="text" name="lastName" placeholder="Last Name" required>
-      <button class="btn-primary" type="submit">Submit</button>
+      <button class="btn-secondary" type="submit">Submit</button>
     </form>
   </div>
 </div>
